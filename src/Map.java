@@ -28,22 +28,25 @@ public class Map extends PApplet {
 	
 	public void setup() {
 		// Setting up the window
-		size(1300 + padding * 2, 900 + padding * 2, P2D);
+		size(1300 + padding, 900 + padding * 2, P2D);
 		this.background(0, 134, 165);
 	
 		// creates a map using one of the map providers above
-		map = new UnfoldingMap(this, 300 + padding, padding, 1000, 900, providerEsriStreet);
+		map = new UnfoldingMap(this, 300, padding, 1000, 900, providerEsriStreet);
 		// makes the map movable
 		MapUtils.createDefaultEventDispatcher(this, map);
 		
 		
 		// make buttons
-		button1 = new Button(260,50, "MAC DONALDS");
+		fill(123, 200, 254);
+		noStroke();
+		button1 = new Button(this, padding, 50, "MAC DONALDS");
 	}
 	
 	 
 	public void draw() {
 		map.draw();
+		
 		button1.draw();
 
 	}
@@ -51,7 +54,7 @@ public class Map extends PApplet {
 	
 	/* sum todo notes */
 	// Make it so you can't zoom all the way out or too close either on some maps
-	
+	// zoom right
 	
 	
 	
