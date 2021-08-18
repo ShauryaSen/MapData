@@ -45,8 +45,10 @@ public class Map extends PApplet {
 	
 	 
 	public void draw() {
+		// Draw the map
 		map.draw();
 		
+		// Draw the button
 		button1.draw();
 
 	}
@@ -54,6 +56,7 @@ public class Map extends PApplet {
 	
 	/* sum todo notes */
 	// Make it so you can't zoom all the way out or too close either on some maps
+	// min zoom max zoom
 	// zoom right
 	
 	

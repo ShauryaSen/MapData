@@ -6,10 +6,11 @@ public class Button {
 	private float x;
 	private float y;
 	private final float WIDTH = 260;
-	private final float HEIGHT = 100;
+	private final float HEIGHT = 80;
 	private String text;
 	private PShape button;
 	private PApplet window;
+	
 	
 
 	public Button(PApplet window, int x, int y, String text) {
@@ -25,11 +26,21 @@ public class Button {
 	}
 	
 	
-	public void draw () {
-
+	public void draw() {
+		
 		window.shape(this.button);
+		
+		// Text settings
+		window.fill(255, 255, 255);
+		
+		window.textAlign(PConstants.LEFT, PConstants.CENTER);
+		window.textSize(20);
+		window.text(this.text, this.x, this.y + this.HEIGHT/2);
 	}
 	
+	
+//	public boolean clicked() {
+//	}
 	
 	
 	
