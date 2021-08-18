@@ -21,12 +21,15 @@ public class Map extends PApplet {
 	// AbstractMapProvider mapProvider = new Microsoft.AerialProvider();
 	
 	
-	// Buttons
-	private Button button1;
+	
+	// make array of buttons:
+	Button buttons[] = new Button[5];
 	
 	private int padding = 20;
 	
 	public void setup() {
+		// set up like the default map
+		
 		// Setting up the window
 		size(1300 + padding, 900 + padding * 2, P2D);
 		this.background(0, 134, 165);
@@ -37,27 +40,46 @@ public class Map extends PApplet {
 		MapUtils.createDefaultEventDispatcher(this, map);
 		
 		
-		// make buttons
-		fill(123, 200, 254);
-		noStroke();
-		button1 = new Button(this, padding, 50, "MAC DONALDS");
+		// Add buttons to the array
+		buttons[0] = new Button(this, padding, 50, "MAC DONALDS");
+		buttons[1] = new Button(this, padding, 150, "fortnite cards");
+		buttons[2] = new Button(this, padding, 250, "nice");
+		buttons[3] = new Button(this, padding, 350, "oh ok");
+		buttons[4] = new Button(this, padding, 450, "henglo");		
 	}
 	
 	 
 	public void draw() {
 		// Draw the map
 		map.draw();
+
 		
-		// Draw the button
-		button1.draw();
+		for (Button button : buttons) {
+			button.draw();
+			
+			// check if our mouse is hovering over a button (darken the button)
+			if (button.isHovering()) {
+				fill(48, 186, 159);
+				
+				// check if mouse down
+				if (mousePressed && (mouseButton == LEFT)) {
+					System.out.println("henglo");	
+					mousePressed = false;
+				}
+				
+			}
+			
+			
+		}
 
 	}
-	
+
 	
 	/* sum todo notes */
 	// Make it so you can't zoom all the way out or too close either on some maps
 	// min zoom max zoom
 	// zoom right
+	// color the buttons
 	
 	
 	

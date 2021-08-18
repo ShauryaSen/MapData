@@ -27,11 +27,14 @@ public class Button {
 	
 	
 	public void draw() {
+		// Button settings
+		window.fill(36, 214, 179);
 		
 		window.shape(this.button);
 		
 		// Text settings
 		window.fill(255, 255, 255);
+		window.noStroke();	
 		
 		window.textAlign(PConstants.LEFT, PConstants.CENTER);
 		window.textSize(20);
@@ -39,10 +42,15 @@ public class Button {
 	}
 	
 	
-//	public boolean clicked() {
-//	}
-	
-	
+	public boolean isHovering() {
+		if (window.mouseX >= this.x && window.mouseX <= this.x + this.WIDTH && window.mouseY >= this.y && window.mouseY <= this.y + this.HEIGHT) {
+			
+			return true;
+		} else {
+			return false;
+		}	
+	}
+		
 	
 	
 	public float getWIDTH() {
