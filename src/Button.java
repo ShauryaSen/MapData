@@ -8,7 +8,6 @@ public class Button {
 	private final float WIDTH = 260;
 	private final float HEIGHT = 80;
 	private String text;
-	private PShape button;
 	private PApplet window;
 	
 	
@@ -19,22 +18,26 @@ public class Button {
 		this.y = y;
 		this.text = text;
 		
-		this.button = window.createShape(PConstants.RECT, x, y, WIDTH, HEIGHT);
-		
-		// myButton = createShape(RECT, this.x, this.y, this.WIDTH, this.HEIGHT);
-		
+		// this.button = window.createShape(PConstants.RECT, x, y, WIDTH, HEIGHT);
+				
 	}
 	
 	
-	public void draw() {
-		// Button settings
+	public void draw(boolean hovering) {
+		// draw the button
 
-		
-		window.shape(this.button);
+		// window.shape(this.button);
+		// if the mouse is hovering over the button make the button a bit darker
+		if (hovering) {
+			window.fill(179, 179, 179);
+		} else {
+			window.fill(255,255,255);
+		}
+		// draw the rectangle
+		window.rect(this.x, this.y, WIDTH, HEIGHT);
 		
 		// Text settings
 		window.fill(0,0,0);
-		window.noStroke();	
 		
 		window.textAlign(PConstants.LEFT, PConstants.CENTER);
 		window.textSize(20);

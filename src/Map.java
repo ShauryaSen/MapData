@@ -61,12 +61,12 @@ public class Map extends PApplet {
 		testKey.draw();
 		
 		for (Button button : buttons) {
-			button.draw();
+			button.draw(false);
 			
 			// check if our mouse is hovering over a button (darken the button)
 			if (button.isHovering()) {
-				fill(179, 179, 179);
-				button.draw();
+				
+				button.draw(true);
 				// check if mouse down
 				if (mousePressed && (mouseButton == LEFT)) {
 					System.out.println("henglo");	

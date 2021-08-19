@@ -20,7 +20,6 @@ public class Key {
 	
 	public void draw() {
 		// Draw the key's rectangle
-		window.stroke(0);
 		window.fill(255,255,255);
 		window.rect(X, Y, WIDTH, HEIGHT);
 	}
