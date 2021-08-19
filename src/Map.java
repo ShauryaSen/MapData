@@ -1,5 +1,6 @@
 import de.fhpotsdam.unfolding.UnfoldingMap;
 import de.fhpotsdam.unfolding.core.Coordinate;
+import de.fhpotsdam.unfolding.marker.Marker;
 import de.fhpotsdam.unfolding.providers.*;
 import de.fhpotsdam.unfolding.utils.MapUtils;
 import processing.core.*;
@@ -23,8 +24,10 @@ public class Map extends PApplet {
 	
 	
 	// make array of buttons:
-	Button buttons[] = new Button[5];
-	
+	private Button buttons[] = new Button[5];
+	private Key testKey;
+	private String[] test = new String[3];
+	private Marker[] test2 = new Marker[3];
 	private int padding = 20;
 	
 	public void setup() {
@@ -45,14 +48,17 @@ public class Map extends PApplet {
 		buttons[1] = new Button(this, padding, 150, "fortnite cards");
 		buttons[2] = new Button(this, padding, 250, "nice");
 		buttons[3] = new Button(this, padding, 350, "oh ok");
-		buttons[4] = new Button(this, padding, 450, "henglo");		
+		buttons[4] = new Button(this, padding, 450, "henglo");
+		
+		// Make the key
+		testKey = new Key(this, test, test2);
 	}
 	
 	 
 	public void draw() {
 		// Draw the map
 		map.draw();
-
+		testKey.draw();
 		
 		for (Button button : buttons) {
 			button.draw();

@@ -33,7 +33,7 @@ public class Button {
 		window.shape(this.button);
 		
 		// Text settings
-		window.fill(255, 255, 255);
+		window.fill(255,255,255);
 		window.noStroke();	
 		
 		window.textAlign(PConstants.LEFT, PConstants.CENTER);
