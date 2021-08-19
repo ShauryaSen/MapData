@@ -28,12 +28,12 @@ public class Button {
 	
 	public void draw() {
 		// Button settings
-		window.fill(36, 214, 179);
+
 		
 		window.shape(this.button);
 		
 		// Text settings
-		window.fill(255,255,255);
+		window.fill(0,0,0);
 		window.noStroke();	
 		
 		window.textAlign(PConstants.LEFT, PConstants.CENTER);
