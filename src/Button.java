@@ -53,6 +53,10 @@ public class Button {
 			return false;
 		}	
 	}
+	
+	public void click() {
+		System.out.println("henglo");
+	}
 		
 	
 	

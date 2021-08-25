@@ -69,7 +69,7 @@ public class Map extends PApplet {
 				button.draw(true);
 				// check if mouse down
 				if (mousePressed && (mouseButton == LEFT)) {
-					System.out.println("henglo");	
+					button.click();
 					mousePressed = false;
 				}
 				
