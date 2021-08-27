@@ -11,6 +11,7 @@ import de.fhpotsdam.unfolding.data.GeoJSONReader;
 import de.fhpotsdam.unfolding.geo.Location;
 import de.fhpotsdam.unfolding.marker.Marker;
 import de.fhpotsdam.unfolding.marker.SimplePointMarker;
+import de.fhpotsdam.unfolding.providers.EsriProvider;
 import de.fhpotsdam.unfolding.utils.GeoUtils;
 import de.fhpotsdam.unfolding.utils.MapUtils;
 
@@ -32,7 +33,7 @@ public class CountryBubbleMapApp extends PApplet {
 		size(800, 600, OPENGL);
 		smooth();
 
-		map = new UnfoldingMap(this);
+		map = new UnfoldingMap(this, new EsriProvider.WorldStreetMap());
 		map.zoomToLevel(2);
 		map.setBackgroundColor(240);
 		MapUtils.createDefaultEventDispatcher(this, map);

@@ -7,6 +7,7 @@ import de.fhpotsdam.unfolding.geo.Location;
 import de.fhpotsdam.unfolding.marker.Marker;
 import de.fhpotsdam.unfolding.marker.MarkerManager;
 import de.fhpotsdam.unfolding.marker.SimplePointMarker;
+import de.fhpotsdam.unfolding.providers.EsriProvider;
 import de.fhpotsdam.unfolding.utils.MapUtils;
 
 /**
@@ -30,8 +31,8 @@ public class ZoomDependentMarkerApp extends PApplet {
 	public void setup() {
 		size(800, 600, OPENGL);
 
-		map = new UnfoldingMap(this);
-		map.zoomAndPanTo(new Location(41.50, -72.38), 5);
+		map = new UnfoldingMap(this, new EsriProvider.WorldStreetMap());
+		map.zoomAndPanTo(5, new Location(41.50, -72.38));
 		
 		MapUtils.createDefaultEventDispatcher(this, map);
 

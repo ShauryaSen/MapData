@@ -5,6 +5,7 @@ import processing.core.PFont;
 import de.fhpotsdam.unfolding.UnfoldingMap;
 import de.fhpotsdam.unfolding.geo.Location;
 import de.fhpotsdam.unfolding.marker.SimplePointMarker;
+import de.fhpotsdam.unfolding.providers.EsriProvider;
 import de.fhpotsdam.unfolding.utils.MapUtils;
 import de.fhpotsdam.unfolding.utils.ScreenPosition;
 
@@ -36,7 +37,7 @@ public class SimpleMarkerApp extends PApplet {
 		size(800, 400);
 		smooth();
 
-		map = new UnfoldingMap(this);
+		map = new UnfoldingMap(this, new EsriProvider.WorldStreetMap());
 		// map.setTweening(true);
 		map.zoomToLevel(3);
 		map.panTo(new Location(40f, 8f));
