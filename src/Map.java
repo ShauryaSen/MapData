@@ -21,14 +21,14 @@ public class Map extends PApplet {
 	// AbstractMapProvider mapProvider = new GeoMapApp.TopologicalGeoMapProvider();
 	// AbstractMapProvider mapProvider = new Microsoft.AerialProvider();
 	
-	
-	
+
 	// make array of buttons:
 	private Button buttons[] = new Button[5];
 	private Key testKey;
 	private String[] test = new String[3];
 	private Marker[] test2 = new Marker[3];
 	private int padding = 20;
+	
 	
 	public void setup() {
 		// set up like the default map
@@ -53,6 +53,7 @@ public class Map extends PApplet {
 		// Make the key
 		testKey = new Key(this, test, test2);
 	}
+	//
 	
 	 
 	public void draw() {
