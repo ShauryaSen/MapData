@@ -5,6 +5,7 @@ import processing.core.PApplet;
 import de.fhpotsdam.unfolding.UnfoldingMap;
 import de.fhpotsdam.unfolding.examples.marker.SimpleMarkerManagerApp;
 import de.fhpotsdam.unfolding.geo.Location;
+import de.fhpotsdam.unfolding.providers.EsriProvider;
 import de.fhpotsdam.unfolding.utils.MapUtils;
 import de.fhpotsdam.unfolding.utils.ScreenPosition;
 
@@ -21,7 +22,7 @@ public class SimplePositionConversionMapApp extends PApplet {
 	public void setup() {
 		size(800, 600, OPENGL);
 
-		map = new UnfoldingMap(this);
+		map = new UnfoldingMap(this, new EsriProvider.NatGeoWorldMap());
 		MapUtils.createDefaultEventDispatcher(this, map);
 	}
 

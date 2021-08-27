@@ -5,6 +5,7 @@ import processing.core.PApplet;
 import de.fhpotsdam.unfolding.UnfoldingMap;
 import de.fhpotsdam.unfolding.examples.interaction.NaviButtonMapApp;
 import de.fhpotsdam.unfolding.geo.Location;
+import de.fhpotsdam.unfolding.providers.EsriProvider;
 import de.fhpotsdam.unfolding.utils.MapUtils;
 
 /**
@@ -25,9 +26,9 @@ public class PanAnimationMapApp extends PApplet {
 	public void setup() {
 		size(800, 600, OPENGL);
 
-		map = new UnfoldingMap(this);
+		map = new UnfoldingMap(this, new EsriProvider.NatGeoWorldMap());
 		map.setTweening(true);
-		map.zoomAndPanTo(locations[currentLocation], 8);
+		map.zoomAndPanTo(8, locations[currentLocation]);
 
 		MapUtils.createDefaultEventDispatcher(this, map);
 	}

@@ -9,6 +9,7 @@ import de.fhpotsdam.unfolding.data.GPXReader;
 import de.fhpotsdam.unfolding.examples.data.customreader.GPXSpeedTrackApp;
 import de.fhpotsdam.unfolding.geo.Location;
 import de.fhpotsdam.unfolding.marker.Marker;
+import de.fhpotsdam.unfolding.providers.Microsoft;
 import de.fhpotsdam.unfolding.utils.MapUtils;
 
 /**
@@ -25,9 +26,9 @@ public class GPXTrackApp extends PApplet {
 	public void setup() {
 		size(800, 600, OPENGL);
 
-		map = new UnfoldingMap(this);
+		map = new UnfoldingMap(this, new Microsoft.AerialProvider());
 		MapUtils.createDefaultEventDispatcher(this, map);
-		map.zoomAndPanTo(startLocation, 13);
+		map.zoomAndPanTo(13, startLocation);
 
 		List<Feature> features = GPXReader.loadData(this, "data/bike-tour.gpx");
 		List<Marker> markers = MapUtils.createSimpleMarkers(features);
