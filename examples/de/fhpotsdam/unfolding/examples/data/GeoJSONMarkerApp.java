@@ -8,6 +8,7 @@ import de.fhpotsdam.unfolding.UnfoldingMap;
 import de.fhpotsdam.unfolding.data.Feature;
 import de.fhpotsdam.unfolding.data.GeoJSONReader;
 import de.fhpotsdam.unfolding.marker.Marker;
+import de.fhpotsdam.unfolding.providers.EsriProvider;
 import de.fhpotsdam.unfolding.utils.MapUtils;
 
 /**
@@ -25,7 +26,7 @@ public class GeoJSONMarkerApp extends PApplet {
 		size(800, 600, OPENGL);
 		smooth();
 
-		map = new UnfoldingMap(this, 50, 50, 700, 500);
+		map = new UnfoldingMap(this, 50, 50, 700, 500, new EsriProvider.NatGeoWorldMap());
 		map.zoomToLevel(2);
 		MapUtils.createDefaultEventDispatcher(this, map);
 
@@ -40,7 +41,7 @@ public class GeoJSONMarkerApp extends PApplet {
 	}
 
 	public void keyPressed() {
-		if (key == ' ') {
+		if (key == 'd') {
 			map.getDefaultMarkerManager().toggleDrawing();
 		}
 	}

@@ -9,6 +9,7 @@ import de.fhpotsdam.unfolding.data.GPXReader;
 import de.fhpotsdam.unfolding.examples.data.customreader.GPXSpeedTrackApp;
 import de.fhpotsdam.unfolding.geo.Location;
 import de.fhpotsdam.unfolding.marker.Marker;
+import de.fhpotsdam.unfolding.providers.EsriProvider;
 import de.fhpotsdam.unfolding.providers.Microsoft;
 import de.fhpotsdam.unfolding.utils.MapUtils;
 
@@ -26,7 +27,7 @@ public class GPXTrackApp extends PApplet {
 	public void setup() {
 		size(800, 600, OPENGL);
 
-		map = new UnfoldingMap(this, new Microsoft.AerialProvider());
+		map = new UnfoldingMap(this, new EsriProvider.NatGeoWorldMap());
 		MapUtils.createDefaultEventDispatcher(this, map);
 		map.zoomAndPanTo(13, startLocation);
 
