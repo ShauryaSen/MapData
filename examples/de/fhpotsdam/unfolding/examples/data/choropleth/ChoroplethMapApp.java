@@ -64,11 +64,11 @@ public class ChoroplethMapApp extends PApplet {
 
 			if (dataEntry != null && dataEntry.value != null) {
 				// Encode value as brightness (values range: 0-1000)
-				float transparency = map(dataEntry.value, 0, 700, 10, 255);
-				marker.setColor(color(0, 255, 0, transparency));
+				float transparency = map(dataEntry.value, 0, 1000, 10, 255);
+				marker.setColor(color(255, 0, 0, transparency));
 			} else {
 				// No value available
-				marker.setColor(color(100, 120));
+				marker.setColor(color(255, 255, 255, 100));
 			}
 		}
 	}

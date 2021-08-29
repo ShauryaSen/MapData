@@ -33,16 +33,28 @@ public class ParseData {
 			if (columns.length == 3) {
 				// columns[1] is the country id and columns[2] is the pop. density
 				countryData.put(columns[1], columns[2]);
-			}
-
-			
-			
+			}		
 		}
-		// start off on 255, 255, 255 markers (white) and then decrease the blue and green to make it more red when popuation increases
+		
+//		for (String value : countryData.values()) {
+//			System.out.println(value);
+//		}
+		
+//		 alot of the densities are low but some reach up to 6k 
+//		 start off on 255, 255, 255 markers (white) and then decrease the blue and green to make it more red when popuation increases
 		for (Marker marker : countryMarkers) {
-			marker.setColor(window.color(255, 200, 200, 200));
+//			marker.setColor(window.color(255, 200, 200, 200));
 			
+			// get the key value pair from hash map that matches up with the marker's id
 			
+			String markerDensity = countryData.get(marker.getId());
+			
+			if (markerDensity == null) {
+				marker.setColor(150);
+			} else {
+				float redness = PApplet.map(Float.parseFloat(markerDensity), 0, 800, 180, 0);
+				marker.setColor(window.color(255, redness, redness, 220));
+			}	
 		}
 		
 		return countryMarkers;

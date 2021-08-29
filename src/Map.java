@@ -51,7 +51,7 @@ public class Map extends PApplet {
 		map.zoomToLevel(2);
 		
 		// Add buttons to the array
-		buttons[0] = new Button(this, padding, 50, "Life Expectancy");
+		buttons[0] = new Button(this, padding, 50, "Population Density");
 		buttons[1] = new Button(this, padding, 150, "fortnite cards");
 		buttons[2] = new Button(this, padding, 250, "nice");
 		buttons[3] = new Button(this, padding, 350, "oh ok");
