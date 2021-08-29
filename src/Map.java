@@ -1,5 +1,8 @@
+import java.util.List;
+
 import de.fhpotsdam.unfolding.UnfoldingMap;
-import de.fhpotsdam.unfolding.core.Coordinate;
+import de.fhpotsdam.unfolding.data.Feature;
+import de.fhpotsdam.unfolding.data.GeoJSONReader;
 import de.fhpotsdam.unfolding.marker.Marker;
 import de.fhpotsdam.unfolding.providers.*;
 import de.fhpotsdam.unfolding.utils.MapUtils;
@@ -41,10 +44,10 @@ public class Map extends PApplet {
 		map = new UnfoldingMap(this, 300, padding, 1000, 900, providerEsriStreet);
 		// makes the map movable
 		MapUtils.createDefaultEventDispatcher(this, map);
-		
+		map.zoomToLevel(2);
 		
 		// Add buttons to the array
-		buttons[0] = new Button(this, padding, 50, "MAC DONALDS");
+		buttons[0] = new Button(this, padding, 50, "Life Expectancy");
 		buttons[1] = new Button(this, padding, 150, "fortnite cards");
 		buttons[2] = new Button(this, padding, 250, "nice");
 		buttons[3] = new Button(this, padding, 350, "oh ok");
@@ -52,8 +55,12 @@ public class Map extends PApplet {
 		
 		// Make the key
 		testKey = new Key(this, test, test2);
+		
+		 
+		List<Feature> countries = GeoJSONReader.loadData(this, "data/countries.geo.json");
+		List<Marker> countryMarkers = MapUtils.createSimpleMarkers(countries);
+		map.addMarkers(countryMarkers);
 	}
-	//
 	
 	 
 	public void draw() {
