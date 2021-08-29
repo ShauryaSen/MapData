@@ -60,15 +60,11 @@ public class Map extends PApplet {
 		// Make the key
 		testKey = new Key(this, test, test2);
 		
-		
-		map.addMarkers(ParseData.populationDensityParser(this));
-		
-		
-		
+		// this means the default data thing will be population density
+		map.addMarkers(ParseData.populationDensityParser(this));	
 	}
 
-	
-	 
+
 	public void draw() {
 		// Draw the map
 		map.draw();

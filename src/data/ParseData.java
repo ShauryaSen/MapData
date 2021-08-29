@@ -40,7 +40,7 @@ public class ParseData {
 //			System.out.println(value);
 //		}
 		
-//		 alot of the densities are low but some reach up to 6k 
+//		 a lot of the densities are low but some reach up to 6k 
 //		 start off on 255, 255, 255 markers (white) and then decrease the blue and green to make it more red when popuation increases
 		for (Marker marker : countryMarkers) {
 //			marker.setColor(window.color(255, 200, 200, 200));
@@ -52,6 +52,9 @@ public class ParseData {
 			if (markerDensity == null) {
 				marker.setColor(150);
 			} else {
+    			// a lot of the densities are low but some reach up to 6k so idk what range
+				// tweak around with these numbers to see what looks good
+				// 
 				float redness = PApplet.map(Float.parseFloat(markerDensity), 0, 800, 180, 0);
 				marker.setColor(window.color(255, redness, redness, 220));
 			}	
