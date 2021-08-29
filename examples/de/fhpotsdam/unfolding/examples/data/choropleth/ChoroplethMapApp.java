@@ -77,6 +77,7 @@ public class ChoroplethMapApp extends PApplet {
 		HashMap<String, DataEntry> dataEntriesMap = new HashMap<String, DataEntry>();
 
 		String[] rows = loadStrings(fileName);
+		
 		for (String row : rows) {
 			// Reads country name and population density value from CSV row
 			String[] columns = row.split(";");

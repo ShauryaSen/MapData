@@ -1,5 +1,6 @@
 import java.util.List;
 
+import data.ParseData;
 import de.fhpotsdam.unfolding.UnfoldingMap;
 import de.fhpotsdam.unfolding.data.Feature;
 import de.fhpotsdam.unfolding.data.GeoJSONReader;
@@ -11,6 +12,9 @@ import processing.core.*;
 public class Map extends PApplet {
 	
 	
+	// eclipse gets mad when i don't have this line
+	private static final long serialVersionUID = 1L;
+
 	// Creating a map
 	private UnfoldingMap map;
 	
@@ -56,15 +60,8 @@ public class Map extends PApplet {
 		// Make the key
 		testKey = new Key(this, test, test2);
 		
-
-		List<Feature> countries = GeoJSONReader.loadData(this, "data/countries.geo.json");
-		List<Marker> countryMarkers = MapUtils.createSimpleMarkers(countries);
-		map.addMarkers(countryMarkers);
 		
-		// start off on 255, 255, 255 markers (white) and then decrease the blue and green to make it more red when popuation increases
-		for (Marker marker : countryMarkers) {
-			marker.setColor(color(255, 100, 100, 200));
-		}
+		map.addMarkers(ParseData.populationDensityParser(this));
 		
 		
 		
