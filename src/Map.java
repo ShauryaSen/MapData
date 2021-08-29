@@ -41,7 +41,7 @@ public class Map extends PApplet {
 		this.background(0, 134, 165);
 	
 		// creates a map using one of the map providers above
-		map = new UnfoldingMap(this, 300, padding, 1000, 900, providerEsriStreet);
+		map = new UnfoldingMap(this, 300, padding, 1000, 900, providerNatGeo);
 		// makes the map movable
 		MapUtils.createDefaultEventDispatcher(this, map);
 		map.zoomToLevel(2);
@@ -56,11 +56,20 @@ public class Map extends PApplet {
 		// Make the key
 		testKey = new Key(this, test, test2);
 		
-		 
+
 		List<Feature> countries = GeoJSONReader.loadData(this, "data/countries.geo.json");
 		List<Marker> countryMarkers = MapUtils.createSimpleMarkers(countries);
 		map.addMarkers(countryMarkers);
+		
+		// start off on 255, 255, 255 markers (white) and then decrease the blue and green to make it more red when popuation increases
+		for (Marker marker : countryMarkers) {
+			marker.setColor(color(255, 100, 100, 200));
+		}
+		
+		
+		
 	}
+
 	
 	 
 	public void draw() {
