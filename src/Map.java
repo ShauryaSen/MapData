@@ -31,9 +31,7 @@ public class Map extends PApplet {
 
 	// make array of buttons:
 	private Button buttons[] = new Button[5];
-	private Key testKey;
-	private String[] test = new String[3];
-	private Marker[] test2 = new Marker[3];
+	private Key key;
 	private int padding = 20;
 	
 	
@@ -58,9 +56,9 @@ public class Map extends PApplet {
 		buttons[4] = new Button(this, padding, 450, "henglo");
 		
 		// Make the key
-		testKey = new Key(this, test, test2);
+		key = new Key(this);
 		
-		// this means the default data thing will be population density
+		// this means the default data and key will be population density
 		map.addMarkers(ParseData.populationDensityParser(this));	
 	}
 
@@ -68,7 +66,7 @@ public class Map extends PApplet {
 	public void draw() {
 		// Draw the map
 		map.draw();
-		testKey.draw();
+		key.draw();
 		
 		for (Button button : buttons) {
 			button.draw(false);
@@ -81,21 +79,14 @@ public class Map extends PApplet {
 				if (mousePressed && (mouseButton == LEFT)) {
 					button.click();
 					mousePressed = false;
-				}
-				
+				}				
 			}
-			
-			
 		}
-
 	}
 
 	
-	/* sum todo notes */
 	// Make it so you can't zoom all the way out or too close either on some maps
-	// min zoom max zoom
-	// zoom right
-	// color the buttons
+
 	
 	
 	
