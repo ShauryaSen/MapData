@@ -54,10 +54,29 @@ public class Button {
 		}	
 	}
 	
-	public void click() {
+	public void click(Key key) {
 		System.out.println("henglo");
+		
+		// change the map and key
+		switchScene(key);		
+		
+		
+		
+		
+		
+//		switch(this.text) {
+//			case "Population Density":
+//				switchScene();
+//				
+//		}
 	}
 		
+	
+	private void switchScene(Key key) {
+		// change the key's attribute "id"
+		System.out.println(this.text);
+		key.setId(this.text);
+	}
 	
 	
 	public float getWIDTH() {

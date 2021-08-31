@@ -8,7 +8,7 @@ public class Key {
 	private float WIDTH = 260;
 	private float HEIGHT = 370;
 	// variable for which key a map is using with default value of population density
-	private String id = "population density";
+	private String id = "henglo";
 
 	public Key(PApplet window) {
 		this.window = window;
@@ -16,20 +16,18 @@ public class Key {
 	}
 	
 	public void draw() {
-		// clear the key
-		clear();
-		// Draw the key's rectangle
+		// clear the key / draw the key's rectangle
 		window.fill(255,255,255);
-		window.noStroke();
-		window.rect(X, Y, WIDTH, HEIGHT);
+		clear();
 		
+		window.noStroke();
 		drawKeyContents();
 		
 		
 	}
 	
 	public void drawKeyContents() {
-		if (id.equals("population density")) {
+		if (id.equals("Population Density")) {
 			// top text
 			window.textSize(25);
 			window.fill(0);
@@ -49,18 +47,20 @@ public class Key {
 			window.fill(244,181,173);
 			window.rect(X + 30, Y + 155, 30, 30);
 			window.fill(150);
-			window.rect(X + 30, Y + 235, 30, 30);
-			
-			
+			window.rect(X + 30, Y + 235, 30, 30);	
+		}
+		
+		if (id.equals("henglo")) {
 			
 		}
+		
 	}
 	
 	public void clear() {
 		window.rect(X, Y, WIDTH, HEIGHT);
 	}
 	
-	public String setId() {
-		return id;
+	public void setId(String id) {
+		this.id = id;
 	}
 }

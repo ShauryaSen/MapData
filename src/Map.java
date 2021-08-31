@@ -50,10 +50,10 @@ public class Map extends PApplet {
 		
 		// Add buttons to the array
 		buttons[0] = new Button(this, padding, 50, "Population Density");
-		buttons[1] = new Button(this, padding, 150, "fortnite cards");
-		buttons[2] = new Button(this, padding, 250, "nice");
-		buttons[3] = new Button(this, padding, 350, "oh ok");
-		buttons[4] = new Button(this, padding, 450, "henglo");
+		buttons[1] = new Button(this, padding, 150, "something");
+		buttons[2] = new Button(this, padding, 250, "somethin else");
+		buttons[3] = new Button(this, padding, 350, "thing 1");
+		buttons[4] = new Button(this, padding, 450, "thing 2");
 		
 		// Make the key
 		key = new Key(this);
@@ -77,7 +77,7 @@ public class Map extends PApplet {
 				button.draw(true);
 				// check if mouse down
 				if (mousePressed && (mouseButton == LEFT)) {
-					button.click();
+					button.click(key);
 					mousePressed = false;
 				}				
 			}
