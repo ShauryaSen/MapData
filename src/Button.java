@@ -1,4 +1,7 @@
+import data.ParseData;
 import de.fhpotsdam.unfolding.UnfoldingMap;
+import de.fhpotsdam.unfolding.marker.Marker;
+import de.fhpotsdam.unfolding.marker.MarkerManager;
 import processing.core.*;
 
 public class Button {
@@ -59,17 +62,7 @@ public class Button {
 		System.out.println("henglo");
 		
 		// change the map and key
-		switchScene(key, map);		
-		
-		
-		
-		
-		
-//		switch(this.text) {
-//			case "Population Density":
-//				switchScene();
-//				
-//		}
+		switchScene(key, map);
 	}
 		
 	
@@ -79,7 +72,17 @@ public class Button {
 		key.setId(this.text);
 		
 		// change the map's thing
+		System.out.println(map.getMarkerManagerList());
+		// first clear out the old marker manager and make new one
 		map.removeMarkerManager(0);
+		map.addMarkerManager(new MarkerManager<Marker>());
+
+		switch(this.text) {
+			case "Population Density":				
+				map.addMarkers(ParseData.populationDensityParser(window));
+			break;
+		}
+		
 	}
 	
 	
