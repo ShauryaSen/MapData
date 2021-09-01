@@ -34,7 +34,6 @@ public class Map extends PApplet {
 	private Key key;
 	private int padding = 20;
 	
-	
 	public void setup() {
 		// set up like the default map
 		
@@ -59,7 +58,8 @@ public class Map extends PApplet {
 		key = new Key(this);
 		
 		// this means the default data and key will be population density
-		map.addMarkers(ParseData.populationDensityParser(this));	
+		map.addMarkers(ParseData.populationDensityParser(this));
+		
 	}
 
 
@@ -77,7 +77,7 @@ public class Map extends PApplet {
 				button.draw(true);
 				// check if mouse down
 				if (mousePressed && (mouseButton == LEFT)) {
-					button.click(key);
+					button.click(key, map);
 					mousePressed = false;
 				}				
 			}
@@ -86,7 +86,7 @@ public class Map extends PApplet {
 
 	
 	// Make it so you can't zoom all the way out or too close either on some maps
-
+	// try using MarkerManager again
 	
 	
 	

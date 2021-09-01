@@ -1,3 +1,4 @@
+import de.fhpotsdam.unfolding.UnfoldingMap;
 import processing.core.*;
 
 public class Button {
@@ -54,11 +55,11 @@ public class Button {
 		}	
 	}
 	
-	public void click(Key key) {
+	public void click(Key key, UnfoldingMap map) {
 		System.out.println("henglo");
 		
 		// change the map and key
-		switchScene(key);		
+		switchScene(key, map);		
 		
 		
 		
@@ -72,10 +73,13 @@ public class Button {
 	}
 		
 	
-	private void switchScene(Key key) {
+	private void switchScene(Key key, UnfoldingMap map) {
 		// change the key's attribute "id"
 		System.out.println(this.text);
 		key.setId(this.text);
+		
+		// change the map's thing
+		map.removeMarkerManager(0);
 	}
 	
 	
